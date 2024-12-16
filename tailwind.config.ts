@@ -12,7 +12,22 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily:{
+        Poppins: ['var(--font-Poppins)'],
+        Josefin: ['var(--font-Josefin)'],
+      },
     },
   },
   plugins: [],
 } satisfies Config;
+
+// tailwind.config.js
+// module.exports = {
+//   theme: {
+//     extend: {
+//       fontFamily: {
+//         sans: ['Roboto', 'Arial', 'sans-serif'],
+//       },
+//     },
+//   },
+// };

@@ -2,19 +2,20 @@ import React from "react";
 import Image from "next/image";
 import 'boxicons/css/boxicons.min.css';
 
-
 const HeroSection = () => {
     return (
         <section className="bg-gray-900 text-white">
             <div className="container mx-auto flex flex-col items-center justify-center px-5 py-16 text-center md:py-32 md:flex-row md:text-left">
 
                 {/* Image and Heading Section */}
-                <div className="flex flex-col items-center md:items-start mr-3px md:flex-row mt-4 md:gap-10">
+                <div className="flex flex-col items-center md:items-start md:flex-row mt-4 md:gap-10">
 
                     {/* Heading and Text */}
                     <div className="text-center mt-6 md:text-left md:w-[50%]">
                         <h1 className="text-4xl font-bold md:text-6xl">
-                            Hi, I`m <span className="text-teal-400">Mohamed Amine Lotfi</span>
+                            Hi, I`m
+                            <br />
+                            <span className="text-teal-400">Mohamed Amine LOTFI</span>
                         </h1>
                         <p className="mt-4 text-lg md:text-2xl text-gray-300">
                             A passionate Full Stack Developer building modern web experiences.
@@ -36,7 +37,6 @@ const HeroSection = () => {
                             </a>
                         </div>
 
-
                         <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
                             <a
                                 href="#projects"
@@ -53,16 +53,16 @@ const HeroSection = () => {
                         </div>
                     </div>
 
-                    {/* Image with neon border */}
-                    <div className="relative mb-8 md:mb-0 mt-6 md:w-[40%]">
+                    <div className="relative mb-8 md:mb-0 mt-6 md:w-[40%] ml-auto">
                         <Image
                             src="/images/me.png"
                             alt="Mohamed Amine Lotfi"
-                            width={400}  // Adjusted width for smaller image
-                            height={400} // Adjusted height for smaller image
-                            className="rounded-full border-4 border-teal-400 hover:shadow-lg hover:shadow-teal-500/50"
+                            width={400}
+                            height={400}
+                            className="rounded-full border-4 border-teal-400 hover:shadow-[0_0_20px_4px_#00b8b8] transition-all duration-300"
                         />
                     </div>
+
                 </div>
             </div>
         </section>

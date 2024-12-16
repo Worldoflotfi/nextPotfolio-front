@@ -11,38 +11,45 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="bg-gray-800 text-white fixed w-full top-0 z-50 shadow-md">
-            <div className="container mx-auto flex items-center justify-between px-4 py-3">
-                <div className="text-2xl font-bold">
-                    Mohamed Amine <span className="text-teal-400">Lotfi</span>
+        <nav className="bg-gray-900 text-white fixed w-full top-0 z-50 shadow-lg transition-all ease-in-out duration-300 transform ">
+            <div className="container mx-auto flex items-center justify-between px-6 py-4">
+                <div className="text-2xl font-bold font-poppins text-teal-400">
+                    Mohamed Amine <span className="text-teal-500">Lotfi</span>
                 </div>
-                <ul className={`hidden md:flex space-x-6 ${isMobileMenuOpen ? 'block' : ''}`}>
-                    <li>
-                        <a href="#home" className="hover:text-teal-200 text-bold">
+                <ul className={`hidden md:flex space-x-8 ${isMobileMenuOpen ? 'block' : ''}`}>
+                    <li className="relative group">
+                        <a href="#home" className="hover:text-teal-300 text-lg transition-colors duration-200">
                             HOME
                         </a>
+                        <span className="absolute left-0 bottom-0 block w-0 h-1 bg-teal-500 group-hover:w-full transition-all duration-300"></span>
                     </li>
-                    <li>
-                        <a href="#about" className="hover:text-teal-200 text-bold">
+                    <li className="relative group">
+                        <a href="#about" className="hover:text-teal-300 text-lg transition-colors duration-200">
                             ABOUT
                         </a>
+                        <span className="absolute left-0 bottom-0 block w-0 h-1 bg-teal-500 group-hover:w-full transition-all duration-300"></span>
                     </li>
-                    <li>
-                        <a href="#services" className="hover:text-teal-200 text-bold">
+                    <li className="relative group">
+                        <a href="#services" className="hover:text-teal-300 text-lg transition-colors duration-200">
                             SERVICES
                         </a>
+                        <span className="absolute left-0 bottom-0 block w-0 h-1 bg-teal-500 group-hover:w-full transition-all duration-300"></span>
                     </li>
-                    <li>
-                        <a href="#projects" className="hover:text-teal-200 text-bold">
+                    <li className="relative group">
+                        <a href="#projects" className="hover:text-teal-300 text-lg transition-colors duration-200">
                             PROJECTS
                         </a>
+                        <span className="absolute left-0 bottom-0 block w-0 h-1 bg-teal-500 group-hover:w-full transition-all duration-300"></span>
                     </li>
-                    <li>
-                        <a href="#contact" className="hover:text-teal-200 text-bold">
+                    <li className="relative group">
+                        <a href="#contact" className="hover:text-teal-300 text-lg transition-colors duration-200">
                             CONTACT
                         </a>
+                        <span className="absolute left-0 bottom-0 block w-0 h-1 bg-teal-500 group-hover:w-full transition-all duration-300"></span>
                     </li>
+
                 </ul>
+
                 {/* Mobile menu button */}
                 <div className="md:hidden">
                     <button
@@ -51,7 +58,7 @@ const NavBar = () => {
                         onClick={toggleMobileMenu} // Toggle mobile menu
                     >
                         <svg
-                            className="h-6 w-6"
+                            className="h-6 w-6 transition-all duration-200 transform hover:scale-110"
                             fill="none"
                             stroke="currentColor"
                             strokeWidth="2"
@@ -70,29 +77,29 @@ const NavBar = () => {
 
             {/* Mobile menu */}
             <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-                <ul className="space-y-4 py-4 px-6 bg-gray-800 text-white">
+                <ul className="space-y-4 py-4 px-6 bg-gray-900 text-white">
                     <li>
-                        <a href="#home" className="hover:text-teal-200">
+                        <a href="#home" className="hover:text-teal-300 text-lg font-semibold transition-colors duration-200">
                             HOME
                         </a>
                     </li>
                     <li>
-                        <a href="#about" className="hover:text-teal-200">
+                        <a href="#about" className="hover:text-teal-300 text-lg font-semibold transition-colors duration-200">
                             ABOUT
                         </a>
                     </li>
                     <li>
-                        <a href="#services" className="hover:text-teal-200">
+                        <a href="#services" className="hover:text-teal-300 text-lg font-semibold transition-colors duration-200">
                             SERVICES
                         </a>
                     </li>
                     <li>
-                        <a href="#projects" className="hover:text-teal-200">
+                        <a href="#projects" className="hover:text-teal-300 text-lg font-semibold transition-colors duration-200">
                             PROJECTS
                         </a>
                     </li>
                     <li>
-                        <a href="#contact" className="hover:text-teal-200">
+                        <a href="#contact" className="hover:text-teal-300 text-lg font-semibold transition-colors duration-200">
                             CONTACT
                         </a>
                     </li>

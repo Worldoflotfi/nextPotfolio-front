@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const ProjectSection = () => {
@@ -31,7 +31,6 @@ const ProjectSection = () => {
         },
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [slidesPerView, setSlidesPerView] = useState(1);
 
     useEffect(() => {
@@ -51,18 +50,6 @@ const ProjectSection = () => {
         return () => window.removeEventListener('resize', updateSlidesPerView);
     }, []);
 
-    const totalSlides = projects.length;
-
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + slidesPerView) % totalSlides);
-    };
-
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) =>
-            (prevIndex - slidesPerView + totalSlides) % totalSlides
-        );
-    };
-
     return (
         <section className="projects bg-gray-900 text-white py-16" id="projects">
             <div className="container mx-auto text-center mb-12">
@@ -70,21 +57,22 @@ const ProjectSection = () => {
             </div>
 
             <div className="relative">
-                <div className="overflow-hidden">
+                <div className="overflow-x-scroll scrollbar-custom">
                     <div
-                        className="flex transition-transform duration-500 ease-in-out"
+                        className="flex space-x-4"
                         style={{
-                            width: `${(100 / slidesPerView) * totalSlides}%`,
-                            transform: `translateX(${-currentIndex * (100 / slidesPerView)}%)`,
+                            minWidth: `${100 * (projects.length / slidesPerView)}%`,
                         }}
                     >
                         {projects.map((project, index) => (
                             <div
                                 key={index}
-                                className="p-4"
-                                style={{ width: `${100 / slidesPerView}%` }}
+                                className="min-w-[300px]"
+                                style={{
+                                    width: `calc(100% / ${slidesPerView})`,
+                                }}
                             >
-                                <div className="project-card bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                                <div className="project-card bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2">
                                     <Image
                                         src={project.image}
                                         alt={project.title}
@@ -123,21 +111,6 @@ const ProjectSection = () => {
                         ))}
                     </div>
                 </div>
-
-                <button
-                    className="swiper-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 text-teal-400 hover:text-teal-300 cursor-pointer z-10 bg-gray-800 bg-opacity-50 rounded-full p-2"
-                    onClick={handlePrev}
-                    aria-label="Previous Slide"
-                >
-                    Prev
-                </button>
-                <button
-                    className="swiper-button-next absolute top-1/2 right-4 transform -translate-y-1/2 text-teal-400 hover:text-teal-300 cursor-pointer z-10 bg-gray-800 bg-opacity-50 rounded-full p-2"
-                    onClick={handleNext}
-                    aria-label="Next Slide"
-                >
-                    Next
-                </button>
             </div>
         </section>
     );

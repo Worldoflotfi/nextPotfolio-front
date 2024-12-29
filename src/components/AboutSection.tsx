@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import TypingEffect from './TypingEffect';
+import TypingEffect from '../utils/TypingEffect';
 
 const AboutSection = () => {
     return (

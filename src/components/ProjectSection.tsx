@@ -54,7 +54,7 @@ const ProjectSection = () => {
 
     return (
         <section
-            className={`projects py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'}`}
+            className={`projects py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-teal-400 text-gray-800'}`}
             id="projects"
         >
             <div className="container mx-auto text-center mb-12">
@@ -80,7 +80,7 @@ const ProjectSection = () => {
                                 }}
                             >
                                 <div
-                                    className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 hover:-translate-y-2 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-100'}`}
+                                    className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-gray-800`}
                                 >
                                     <Image
                                         src={project.image}

@@ -44,7 +44,7 @@ const HeroSection = () => {
                     {/* Heading and Text */}
                     <div className="text-center mt-6 md:text-left md:w-[50%]">
                         <h1 className="text-4xl font-bold md:text-6xl font-Poppins">
-                            Hi, I&apos;m
+                            <span className="text-gray-800 dark:text-white">Hi, I&apos;m</span>
                             <br />
                             <span className="text-teal-400 dark:text-teal-400 font-Poppins">
                                 Mohamed Amine LOTFI

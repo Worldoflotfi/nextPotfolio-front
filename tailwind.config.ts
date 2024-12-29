@@ -18,6 +18,9 @@ export default {
       },
     },
   },
+
+  darkMode: 'class', // Enable dark mode based on a class
+
   // plugins: [require('tailwind-scrollbar-hide')],
 } satisfies Config;
 

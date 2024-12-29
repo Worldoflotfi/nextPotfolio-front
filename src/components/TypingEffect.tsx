@@ -6,6 +6,7 @@ interface TypingEffectProps {
     typingSpeed?: number; // Speed for typing (ms per character)
     deletingSpeed?: number; // Speed for deleting (ms per character)
     pauseTime?: number; // Pause time between texts (ms)
+    className?: string; //new type for className
 }
 
 const TypingEffect: React.FC<TypingEffectProps> = ({
@@ -13,6 +14,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
     typingSpeed = 100,
     deletingSpeed = 50,
     pauseTime = 2000,
+    // className = ''
 }) => {
     const [currentText, setCurrentText] = useState(''); // The text being displayed
     const [index, setIndex] = useState(0); // Current index in the texts array
@@ -43,6 +45,8 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
             handleTyping,
             isDeleting ? deletingSpeed : typingSpeed
         );
+
+        // setCurrentText(currentText.slice(0,-1));  added 
 
         return () => clearTimeout(typingInterval); // Cleanup interval
     }, [currentText, isDeleting, index, texts, typingSpeed, deletingSpeed, pauseTime]);

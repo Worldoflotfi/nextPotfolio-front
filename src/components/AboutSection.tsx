@@ -26,7 +26,7 @@ const AboutSection = () => {
                         typingSpeed={100}
                         deletingSpeed={50}
                         pauseTime={1500}
-                        className= 'text-gray-900 dark:text-tale-400'
+                        className= 'text-gray-900'
                     />
 
                     <p className="text-white dark:text-teal-300 leading-relaxed mb-6 font-semibold">

@@ -1,9 +1,11 @@
 'use client';
-
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useTheme } from '../utils/ThemeContext'; // Assuming you have the theme context for dark mode and light mode
 
 const ProjectSection = () => {
+    const { isDarkMode } = useTheme(); // Get the current theme (dark or light)
+
     const projects = [
         {
             image: '/images/blog8.jpg',
@@ -51,9 +53,14 @@ const ProjectSection = () => {
     }, []);
 
     return (
-        <section className="projects bg-gray-900 text-white py-16" id="projects">
+        <section
+            className={`projects py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'}`}
+            id="projects"
+        >
             <div className="container mx-auto text-center mb-12">
-                <h2 className="text-4xl font-bold text-teal-400 mb-6">Projects</h2>
+                <h2 className={`text-4xl font-bold ${isDarkMode ? 'text-teal-400' : 'text-teal-600'} mb-6`}>
+                    Projects
+                </h2>
             </div>
 
             <div className="relative">
@@ -72,7 +79,9 @@ const ProjectSection = () => {
                                     width: `calc(100% / ${slidesPerView})`,
                                 }}
                             >
-                                <div className="project-card bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2">
+                                <div
+                                    className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 hover:-translate-y-2 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-100'}`}
+                                >
                                     <Image
                                         src={project.image}
                                         alt={project.title}
@@ -80,10 +89,12 @@ const ProjectSection = () => {
                                         width={500}
                                         height={300}
                                     />
-                                    <h3 className="text-2xl font-semibold text-teal-400 mb-4">
+                                    <h3 className={`text-2xl font-semibold ${isDarkMode ? 'text-teal-400' : 'text-teal-600'} mb-4`}>
                                         {project.title}
                                     </h3>
-                                    <p className="text-gray-400 mb-6">{project.description}</p>
+                                    <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-800'} mb-6`}>
+                                        {project.description}
+                                    </p>
                                     <a
                                         href={project.link}
                                         target="_blank"

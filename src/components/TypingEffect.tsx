@@ -52,7 +52,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
     }, [currentText, isDeleting, index, texts, typingSpeed, deletingSpeed, pauseTime]);
 
     return (
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+        <h3 className="text-2xl font-semibold text-tale-400 mb-4">
             {currentText}
             <span className="text-teal-400">|</span>
         </h3>

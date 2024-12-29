@@ -12,32 +12,6 @@ const NavBar = () => {
 
     const { isDarkMode, toggleDarkMode } = useTheme();
 
-    // const toggleDarkMode = () => {
-    //     setIsDarkMode(!isDarkMode);
-    // };
-
-    // useEffect(() => {
-    //     const savedTheme = localStorage.getItem('theme');
-    //     if (savedTheme === 'dark') {
-    //         setIsDarkMode(true);
-    //         document.documentElement.classList.add('dark');
-    //     } else {
-    //         setIsDarkMode(false);
-    //         document.documentElement.classList.remove('dark');
-    //     }
-    // }, []);
-
-    // useEffect(() => {
-    //     if (isDarkMode) {
-    //         localStorage.setItem('theme', 'dark');
-    //         document.documentElement.classList.add('dark');
-    //         document.documentElement.classList.remove('light');
-    //     } else {
-    //         localStorage.setItem('theme', 'light');
-    //         document.documentElement.classList.add('light');
-    //         document.documentElement.classList.remove('dark');
-    //     }
-    // }, [isDarkMode]);
 
     return (
         <nav

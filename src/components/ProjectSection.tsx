@@ -55,7 +55,7 @@ const ProjectSection = () => {
     return (
         <section
             className={`projects py-16 ${
-                isDarkMode ? 'bg-gray-900 text-white' : 'bg-teal-50 text-gray-900'
+                isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'
             }`}
             id="projects"
         >
@@ -86,11 +86,16 @@ const ProjectSection = () => {
                                 }}
                             >
                                 <div
-                                    className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 hover:-translate-y-2 ${
+                                    className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl ${
                                         isDarkMode
                                             ? 'bg-gray-800 text-gray-200'
-                                            : 'bg-white text-gray-800 border border-gray-300'
+                                            : 'bg-teal-500 text-gray-800'
                                     }`}
+                                    style={{
+                                        boxShadow: isDarkMode
+                                            ? '5px 5px 10px rgba(0, 0, 0, 0.8), 0 10px 20px rgba(0, 0, 0, 0.6)' // Shadow from left and bottom in dark mode
+                                            : '5px 5px 10px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)', // Shadow from left and bottom in light mode
+                                    }}
                                 >
                                     <Image
                                         src={project.image}
@@ -103,7 +108,7 @@ const ProjectSection = () => {
                                         className={`text-2xl font-semibold ${
                                             isDarkMode
                                                 ? 'text-teal-400'
-                                                : 'text-teal-600'
+                                                : 'text-gray-800'
                                         } mb-4`}
                                     >
                                         {project.title}
@@ -112,7 +117,7 @@ const ProjectSection = () => {
                                         className={`${
                                             isDarkMode
                                                 ? 'text-gray-400'
-                                                : 'text-gray-600'
+                                                : 'text-gray-200'
                                         } mb-6`}
                                     >
                                         {project.description}
@@ -124,7 +129,7 @@ const ProjectSection = () => {
                                         className={`inline-flex items-center ${
                                             isDarkMode
                                                 ? 'text-teal-400 hover:text-teal-300'
-                                                : 'text-teal-600 hover:text-teal-500'
+                                                : 'text-gray-800 hover:text-gray-100'
                                         } text-lg font-medium transition duration-300`}
                                     >
                                         <span>Visit Website</span>
@@ -148,6 +153,27 @@ const ProjectSection = () => {
                         ))}
                     </div>
                 </div>
+                <p
+                    className={`absolute right-4 -bottom-10 flex items-center text-sm ${
+                        isDarkMode ? 'text-teal-400' : 'text-teal-600'
+                    }`}
+                >
+                    <span>Scroll to see more</span>
+                    <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 5l7 7-7 7"
+                        />
+                    </svg>
+                </p>
             </div>
         </section>
     );

@@ -22,21 +22,17 @@ body {
 
 /* Custom scrollbar styling */
 .scrollbar-custom {
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #4fd1c5
-  #1f2937; /* Thumb and track colors */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
 .scrollbar-custom::-webkit-scrollbar {
-  height: 8px; /* Height of the horizontal scrollbar */
-  background: #1f2937; /* Track color */
+  display: none; /* Chrome, Safari, Opera */
 }
-
-.scrollbar-custom::-webkit-scrollbar-thumb {
-  background: #4fd1c5
-  ; /* Thumb color */
-  border-radius: 4px;
-}
+/* .scrollbar-custom::-webkit-scrollbar-thumb { */
+  /* background: #4fd1c5;  */
+  /* border-radius: 30px; */
+/* } */
 
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
   background: #0d9488; /* Thumb color on hover */

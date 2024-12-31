@@ -92,7 +92,7 @@ const HeroSection = () => {
                             </a>
                             <a
                                 href="#contact"
-                                className="px-6 py-3 text-lg font-semibold border border-teal-500 dark:border-teal-400 hover:bg-teal-500 hover:text-white dark:hover:bg-teal-300 rounded-lg transition-all duration-300"
+                                className="px-6 py-3 text-lg font-semibold border border-teal-500 dark:border-teal-400 hover:bg-teal-500 text-teal-400 hover:text-white dark:hover:bg-teal-300 rounded-lg transition-all duration-300"
                             >
                                 Contact Me
                             </a>

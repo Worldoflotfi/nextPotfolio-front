@@ -10,20 +10,22 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
 
   useEffect(() => {
+    // Checking localStorage after the component mounts (client-side only)
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDarkMode(true);
+    const isDark = savedTheme === 'dark';
+    setIsDarkMode(isDark);
+    if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
-      setIsDarkMode(false);
       document.documentElement.classList.remove('dark');
     }
   }, []);
 
   useEffect(() => {
+    if (isDarkMode === null) return; // Avoiding setting theme before it's initialized
     if (isDarkMode) {
       localStorage.setItem('theme', 'dark');
       document.documentElement.classList.add('dark');
@@ -40,8 +42,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
-      {children}
+    <ThemeContext.Provider value={{ isDarkMode: isDarkMode ?? false, toggleDarkMode }}>
+      {isDarkMode !== null ? children : null} {/* Render children only after theme is loaded */}
     </ThemeContext.Provider>
   );
 };
@@ -51,5 +53,6 @@ export const useTheme = () => {
   if (context === undefined) {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
+  
   return context;
 };

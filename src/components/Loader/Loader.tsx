@@ -11,3 +11,4 @@
 // }
 
 // export default Loader
+//write a program to display the following output   

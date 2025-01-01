@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { useTheme } from '../utils/ThemeContext'; 
 
 const ProjectSection = () => {
-    const { isDarkMode } = useTheme(); //current theme (dark or light)
-
+    const { isDarkMode } = useTheme(); // INFO: current theme (dark or light)
+     
     const projects = [
         {
             image: '/images/blog8.jpg',

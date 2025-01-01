@@ -4,6 +4,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import { Josefin_Sans } from "next/font/google";
 import {ThemeProvider} from '../utils/ThemeContext';
+// import Loader from "@/components/Loader/Loader";
 // import { useLoadUserQuery } from "@/redux/features/api/apiSlice";   //need redux for this
 
 

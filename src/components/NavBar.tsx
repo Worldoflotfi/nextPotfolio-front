@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { useTheme } from '../utils/ThemeContext'; // Adjust the path accordingly
 
@@ -19,7 +19,8 @@ const NavBar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Branding */}
-        <div className="text-2xl font-bold font-Josefin">
+        <Link href='/'>
+         <div className="text-2xl font-bold font-Josefin">
           <span
             className={`${
               isDarkMode ? 'text-teal-400' : 'text-teal-600'
@@ -35,6 +36,8 @@ const NavBar = () => {
             LOTFI
           </span>
         </div>
+        </Link>
+       
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8">

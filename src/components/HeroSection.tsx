@@ -35,7 +35,7 @@ const HeroSection = () => {
         }, [isDarkMode]);
 
     return (//bg-gray-900 text-white
-        <section className=" dark:bg-gray-800 dark:text-white bg-white text-gray-900 transition-colors duration-300">
+        <section className=" dark:bg-gray-900 dark:text-white bg-white text-gray-900 transition-colors duration-300">
             <div className="container mx-auto flex flex-col items-center justify-center px-5 py-16 text-center md:py-32 md:flex-row md:text-left">
 
                 {/* Image and Heading Section */}

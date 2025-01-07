@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
-import { useTheme } from '../utils/ThemeContext'; // Assuming you have the theme context for dark mode and light mode
+import { useTheme } from '../utils/ThemeContext'; //info: Assuming you have the theme context for dark mode and light mode
 
 const ServiceSection = () => {
-    const { isDarkMode } = useTheme(); // Get the current theme (dark or light)
+    const { isDarkMode } = useTheme(); //TODO: Get the current theme (dark or light)
 
     return (
         <section

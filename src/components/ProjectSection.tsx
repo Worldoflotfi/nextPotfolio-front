@@ -8,27 +8,27 @@ const ProjectSection = () => {
      
     const projects = [
         {
-            image: '/images/blog8.jpg',
-            title: 'Project 1',
-            description: 'A dynamic web application built with React and Node.js.',
+            image: '/projects/blog.JPG',
+            title: 'Blog App',
+            description: 'A dynamic platform for creating and managing blog posts using React.js and Node.js.',
             link: 'https://example.com',
         },
         {
-            image: '/images/blog9.jpg',
-            title: 'Project 2',
-            description: 'A responsive e-commerce platform using Next.js and MongoDB.',
+            image: '/projects/hidaya.JPG',
+            title: 'Hidaya Store',
+            description: 'An online marketplace for Islamic products built with the MERN stack.',
+            link: 'https://example.com',
+        },
+        {
+            image: '/projects/real estate.JPG',
+            title: 'Al-Mokhbir Al-Aqari',
+            description: 'A learning management system for real estate students using Next.js, Node.js, and MongoDB.',
             link: 'https://example.com',
         },
         {
             image: '/images/blog15.jpg',
-            title: 'Project 3',
-            description: 'A social networking site using React.js and Express.js.',
-            link: 'https://example.com',
-        },
-        {
-            image: '/images/blog15.jpg',
-            title: 'Project 4',
-            description: 'A content management system built with React and Node.js.',
+            title: 'ATM Management App',
+            description: 'A comprehensive application for managing ATM operations using React.js and Java Spring Boot.',
             link: 'https://example.com',
         },
     ];
@@ -55,7 +55,7 @@ const ProjectSection = () => {
     return (
         <section
             className={`projects py-16 ${
-                isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'
+                isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'
             }`}
             id="projects"
         >
@@ -72,7 +72,7 @@ const ProjectSection = () => {
             <div className="relative">
                 <div className="overflow-x-scroll scrollbar-custom">
                     <div
-                        className="flex space-x-4"
+                        className="flex space-x-4 mb-6"
                         style={{
                             minWidth: `${100 * (projects.length / slidesPerView)}%`,
                         }}
@@ -89,7 +89,7 @@ const ProjectSection = () => {
                                     className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl ${
                                         isDarkMode
                                             ? 'bg-gray-800 text-gray-200'
-                                            : 'bg-teal-500 text-gray-800'
+                                            : 'bg-gray-200 text-gray-800'
                                     }`}
                                     style={{
                                         boxShadow: isDarkMode
@@ -102,13 +102,13 @@ const ProjectSection = () => {
                                         alt={project.title}
                                         className="w-full h-64 object-cover rounded-lg mb-4"
                                         width={500}
-                                        height={300}
+                                        height={200}
                                     />
                                     <h3
                                         className={`text-2xl font-semibold ${
                                             isDarkMode
                                                 ? 'text-teal-400'
-                                                : 'text-gray-800'
+                                                : 'text-teal-600'
                                         } mb-4`}
                                     >
                                         {project.title}
@@ -117,7 +117,7 @@ const ProjectSection = () => {
                                         className={`${
                                             isDarkMode
                                                 ? 'text-gray-400'
-                                                : 'text-gray-200'
+                                                : 'text-gray-700'
                                         } mb-6`}
                                     >
                                         {project.description}
@@ -129,7 +129,7 @@ const ProjectSection = () => {
                                         className={`inline-flex items-center ${
                                             isDarkMode
                                                 ? 'text-teal-400 hover:text-teal-300'
-                                                : 'text-gray-800 hover:text-gray-100'
+                                                : 'text-teal-500 hover:text-teal-300'
                                         } text-lg font-medium transition duration-300`}
                                     >
                                         <span>Visit Website</span>

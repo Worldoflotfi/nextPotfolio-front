@@ -56,19 +56,19 @@ const HeroSection = () => {
                                 <i className="bx bxs-phone"></i>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/in/mohamed-amine-lotfiii-/"
                                 className="text-teal-500 dark:text-teal-400 hover:text-teal-300 dark:hover:text-teal-200 text-3xl"
                             >
                                 <i className="bx bxl-linkedin-square"></i>
                             </a>
                             <a
-                                href="#"
+                                href="https://x.com/Lotfy96272766"
                                 className="text-teal-500 dark:text-teal-400 hover:text-teal-300 dark:hover:text-teal-200 text-3xl"
                             >
                                 <i className="bx bxl-twitter"></i>
                             </a>
                             <a
-                                href="#"
+                                href="https://github.com/Worldoflotfi"
                                 className="text-teal-500 dark:text-teal-400 hover:text-teal-300 dark:hover:text-teal-200 text-3xl"
                             >
                                 <i className="bx bxl-github"></i>

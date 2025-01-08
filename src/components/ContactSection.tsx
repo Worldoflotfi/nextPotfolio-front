@@ -8,17 +8,15 @@ const ContactSection = () => {
 
     return (
         <section
-            className={`py-16 ${
-                isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'
-            }`}
+            className={`py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'
+                }`}
             id="contact"
         >
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2
-                        className={`text-4xl font-bold ${
-                            isDarkMode ? 'text-teal-400' : 'text-teal-600'
-                        } mb-4`}
+                        className={`text-4xl font-bold ${isDarkMode ? 'text-teal-400' : 'text-teal-600'
+                            } mb-4`}
                     >
                         Get in Touch
                     </h2>
@@ -31,17 +29,15 @@ const ContactSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Contact Form */}
                     <div
-                        className={`p-8 rounded-lg shadow-lg ${
-                            isDarkMode ? 'bg-gray-800' : 'bg-white'
-                        }`}
+                        className={`p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'
+                            }`}
                     >
                         <form action="#" method="POST" className="space-y-6">
                             <div>
                                 <label
                                     htmlFor="name"
-                                    className={`block text-sm font-medium ${
-                                        isDarkMode ? 'text-gray-300' : 'text-gray-700'
-                                    }`}
+                                    className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                                        }`}
                                 >
                                     Name
                                 </label>
@@ -50,20 +46,18 @@ const ContactSection = () => {
                                     id="name"
                                     name="name"
                                     required
-                                    className={`mt-1 block w-full ${
-                                        isDarkMode
-                                            ? 'bg-gray-700 text-gray-300 border-gray-600'
-                                            : 'bg-gray-100 text-gray-800 border-gray-300'
-                                    } border rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-400`}
+                                    className={`mt-1 block w-full ${isDarkMode
+                                        ? 'bg-gray-700 text-gray-300 border-gray-600'
+                                        : 'bg-gray-100 text-gray-800 border-gray-300'
+                                        } border rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-400`}
                                 />
                             </div>
 
                             <div>
                                 <label
                                     htmlFor="email"
-                                    className={`block text-sm font-medium ${
-                                        isDarkMode ? 'text-gray-300' : 'text-gray-700'
-                                    }`}
+                                    className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                                        }`}
                                 >
                                     Email
                                 </label>
@@ -72,20 +66,18 @@ const ContactSection = () => {
                                     id="email"
                                     name="email"
                                     required
-                                    className={`mt-1 block w-full ${
-                                        isDarkMode
-                                            ? 'bg-gray-700 text-gray-300 border-gray-600'
-                                            : 'bg-gray-100 text-gray-800 border-gray-300'
-                                    } border rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-400`}
+                                    className={`mt-1 block w-full ${isDarkMode
+                                        ? 'bg-gray-700 text-gray-300 border-gray-600'
+                                        : 'bg-gray-100 text-gray-800 border-gray-300'
+                                        } border rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-400`}
                                 />
                             </div>
 
                             <div>
                                 <label
                                     htmlFor="message"
-                                    className={`block text-sm font-medium ${
-                                        isDarkMode ? 'text-gray-300' : 'text-gray-700'
-                                    }`}
+                                    className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                                        }`}
                                 >
                                     Message
                                 </label>
@@ -94,21 +86,19 @@ const ContactSection = () => {
                                     name="message"
                                     rows={5}
                                     required
-                                    className={`mt-1 block w-full ${
-                                        isDarkMode
-                                            ? 'bg-gray-700 text-gray-300 border-gray-600'
-                                            : 'bg-gray-100 text-gray-800 border-gray-300'
-                                    } border rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-400`}
+                                    className={`mt-1 block w-full ${isDarkMode
+                                        ? 'bg-gray-700 text-gray-300 border-gray-600'
+                                        : 'bg-gray-100 text-gray-800 border-gray-300'
+                                        } border rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-teal-400`}
                                 ></textarea>
                             </div>
 
                             <button
                                 type="submit"
-                                className={`w-full ${
-                                    isDarkMode
-                                        ? 'bg-teal-400 text-gray-900 hover:bg-teal-300'
-                                        : 'bg-teal-600 text-white hover:bg-teal-500'
-                                } font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300`}
+                                className={`w-full ${isDarkMode
+                                    ? 'bg-teal-400 text-gray-900 hover:bg-teal-300'
+                                    : 'bg-teal-600 text-white hover:bg-teal-500'
+                                    } font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300`}
                             >
                                 Send Message
                             </button>
@@ -118,14 +108,12 @@ const ContactSection = () => {
                     {/* Contact Info & Social Media */}
                     <div className="space-y-8">
                         <div
-                            className={`p-8 rounded-lg shadow-lg ${
-                                isDarkMode ? 'bg-gray-800' : 'bg-white'
-                            }`}
+                            className={`p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'
+                                }`}
                         >
                             <h3
-                                className={`text-2xl font-semibold ${
-                                    isDarkMode ? 'text-teal-400' : 'text-teal-600'
-                                } mb-4`}
+                                className={`text-2xl font-semibold ${isDarkMode ? 'text-teal-400' : 'text-teal-600'
+                                    } mb-4`}
                             >
                                 Contact Information
                             </h3>
@@ -133,22 +121,18 @@ const ContactSection = () => {
                                 You can also reach me directly via email or phone:
                             </p>
                             <p className={isDarkMode ? 'text-gray-300' : 'text-gray-800'}>
-                                <strong>Email:</strong> example@example.com
+                                <strong>Email:</strong> medamineltf.100@gmail.com
                             </p>
                             <p className={isDarkMode ? 'text-gray-300' : 'text-gray-800'}>
-                                <strong>Phone:</strong> +123 456 7890
+                                <strong>Phone:</strong> +212 6 84 80 50 43
                             </p>
                         </div>
 
                         <div
-                            className={`p-8 rounded-lg shadow-lg ${
-                                isDarkMode ? 'bg-gray-800' : 'bg-white'
-                            }`}
+                            className={`p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}
                         >
                             <h3
-                                className={`text-2xl font-semibold ${
-                                    isDarkMode ? 'text-teal-400' : 'text-teal-600'
-                                } mb-4`}
+                                className={`text-2xl font-semibold ${isDarkMode ? 'text-teal-400' : 'text-teal-600'} mb-4`}
                             >
                                 Connect with Me
                             </h3>
@@ -159,25 +143,18 @@ const ContactSection = () => {
                                         href={`https://${platform}.com`}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`transition duration-300 ${
-                                            isDarkMode
+                                        className={`transition duration-300 ${isDarkMode
                                                 ? 'text-teal-400 hover:text-teal-300'
                                                 : 'text-teal-600 hover:text-teal-500'
-                                        }`}
+                                            }`}
                                     >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="currentColor"
-                                            className="h-8 w-8"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            {/* Example path, customize based on actual platform */}
-                                            <path d="..." />
-                                        </svg>
+                                        <i className={`bx bxl-${platform} text-3xl`}></i>
                                     </a>
                                 ))}
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>

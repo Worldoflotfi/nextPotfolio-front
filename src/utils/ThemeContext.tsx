@@ -10,30 +10,19 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    // Checking localStorage after the component mounts (client-side only)
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    // Default to dark mode if no saved preference
     const savedTheme = localStorage.getItem('theme');
-    const isDark = savedTheme === 'dark';
-    setIsDarkMode(isDark);
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
+    return savedTheme ? savedTheme === 'dark' : true;  // Default to true for dark mode
+  });
 
   useEffect(() => {
-    if (isDarkMode === null) return; // Avoiding setting theme before it's initialized
     if (isDarkMode) {
-      localStorage.setItem('theme', 'dark');
       document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
     } else {
-      localStorage.setItem('theme', 'light');
-      document.documentElement.classList.add('light');
       document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   }, [isDarkMode]);
 
@@ -42,8 +31,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode: isDarkMode ?? false, toggleDarkMode }}>
-      {isDarkMode !== null ? children : null} {/* Render children only after theme is loaded */}
+    <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
+      {children}
     </ThemeContext.Provider>
   );
 };
@@ -53,6 +42,5 @@ export const useTheme = () => {
   if (context === undefined) {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
-  
   return context;
 };

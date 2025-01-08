@@ -2,11 +2,13 @@
 
 import React from 'react';
 import { useTheme } from '../utils/ThemeContext';
+import ScrollReveal from '@/utils/ScrollReveal';
 
 const ContactSection = () => {
     const { isDarkMode } = useTheme();
 
     return (
+        <ScrollReveal>
         <section
             className={`py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'
                 }`}
@@ -159,6 +161,7 @@ const ContactSection = () => {
                 </div>
             </div>
         </section>
+    </ScrollReveal>
     );
 };
 

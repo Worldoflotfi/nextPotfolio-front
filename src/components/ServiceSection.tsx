@@ -1,11 +1,13 @@
 'use client';
 import React from 'react';
 import { useTheme } from '../utils/ThemeContext'; //info: Assuming you have the theme context for dark mode and light mode
+import ScrollReveal from '@/utils/ScrollReveal';
 
 const ServiceSection = () => {
     const { isDarkMode } = useTheme(); //TODO: Get the current theme (dark or light)
 
     return (
+        <ScrollReveal>
         <section
             className={`services py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'}`}
             id="services"
@@ -80,6 +82,7 @@ const ServiceSection = () => {
                 ))}
             </div>
         </section>
+    </ScrollReveal>
     );
 };
 

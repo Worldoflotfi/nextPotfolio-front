@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useTheme } from '../utils/ThemeContext';
+import ScrollReveal from '@/utils/ScrollReveal';
 
 const ProjectSection = () => {
     const { isDarkMode } = useTheme(); // INFO: current theme (dark or light)
@@ -11,7 +12,7 @@ const ProjectSection = () => {
             image: '/projects/blog.JPG',
             title: 'Blog App',
             description: 'A dynamic platform for creating and managing blog posts using React.js and Node.js.',
-            link: 'https://example.com',
+            link: 'https://github.com/Worldoflotfi/React-blog-app-frontend',
         },
         {
             image: '/projects/hidaya.JPG',
@@ -23,13 +24,13 @@ const ProjectSection = () => {
             image: '/projects/real estate.JPG',
             title: 'Al-Mokhbir Al-Aqari',
             description: 'A learning management system for real estate students using Next.js, Node.js, and MongoDB.',
-            link: 'https://example.com',
+            link: 'https://github.com/Worldoflotfi/RE-agengy-front',
         },
         {
             image: '/images/blog15.jpg',
             title: 'ATM Management App',
             description: 'A comprehensive application for managing ATM operations using React.js and Java Spring Boot.',
-            link: 'https://example.com',
+            link: 'https://github.com/Worldoflotfi/ATM-management',
         },
     ];
 
@@ -53,6 +54,7 @@ const ProjectSection = () => {
     }, []);
 
     return (
+        <ScrollReveal>
         <section
             className={`projects py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
                 }`}
@@ -171,6 +173,7 @@ const ProjectSection = () => {
 
             </div>
         </section>
+    </ScrollReveal>
     );
 };
 

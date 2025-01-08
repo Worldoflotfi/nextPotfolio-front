@@ -29,7 +29,7 @@ const NavBar = () => {
     };
   }, [lastScrollY]);
 
-  const handleNavigationClick = (sectionId: unknown) => {
+  const handleNavigationClick = (sectionId: string) => {
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
       targetSection.scrollIntoView({

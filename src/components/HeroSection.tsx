@@ -1,50 +1,43 @@
-'use client';
-import Image from 'next/image';
+'use client'
+import Image from "next/image";
 import 'boxicons/css/boxicons.min.css';
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import ScrollReveal from "@/utils/ScrollReveal";
 
 const HeroSection = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+
+     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            setIsDarkMode(true);
-            document.documentElement.classList.add('dark');
-        } else {
-            setIsDarkMode(false);
-            document.documentElement.classList.remove('dark');
-        }
-    }, []);
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                setIsDarkMode(true);
+                document.documentElement.classList.add('dark');
+            } else {
+                setIsDarkMode(false);
+                document.documentElement.classList.remove('dark');
+            }
+        }, []);
 
     useEffect(() => {
-        if (isDarkMode) {
-            localStorage.setItem('theme', 'dark');
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
-        } else {
-            localStorage.setItem('theme', 'light');
-            document.documentElement.classList.add('light');
-            document.documentElement.classList.remove('dark');
-        }
-    }, [isDarkMode]);
-
-    const fadeInUp = {
-        initial: { opacity: 0, y: 50 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.8, ease: 'easeOut' }
-    };
+            if (isDarkMode) {
+                localStorage.setItem('theme', 'dark');
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+            } else {
+                localStorage.setItem('theme', 'light');
+                document.documentElement.classList.add('light');
+                document.documentElement.classList.remove('dark');
+            }
+        }, [isDarkMode]);
 
     return (
-        <motion.section
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="dark:bg-gray-900 dark:text-white bg-white text-gray-900 transition-colors duration-300"
-        >
+        <ScrollReveal>
+        <section className="dark:bg-gray-900 dark:text-white bg-white text-gray-900 transition-colors duration-300">
             <div className="container mx-auto flex flex-col items-center justify-center px-5 py-6 text-center md:py-20 md:flex-row md:text-left">
-                <motion.div {...fadeInUp} className="flex flex-col items-center md:items-start md:flex-row mt-4 md:gap-10">
+
+                <div className="flex flex-col items-center md:items-start md:flex-row mt-4 md:gap-10">
+
                     <div className="text-center mt-6 md:text-left md:w-[50%]">
                         <h1 className="text-4xl font-bold md:text-6xl font-Poppins">
                             <span className="text-gray-800 dark:text-white">Hi, I&apos;m</span>
@@ -56,6 +49,7 @@ const HeroSection = () => {
                         <p className="mt-4 text-lg md:text-2xl font-Poppins text-gray-500 dark:text-gray-300">
                             A passionate Full Stack Developer building modern web experiences.
                         </p>
+
                         <div className="mt-8 flex justify-center md:justify-start gap-6">
                             <a
                                 href="#"
@@ -84,27 +78,22 @@ const HeroSection = () => {
                         </div>
 
                         <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
-                            <motion.a
-                                {...fadeInUp}
+                            <a
                                 href="#projects"
                                 className="px-6 py-3 text-lg font-semibold bg-teal-500 dark:bg-teal-400 hover:bg-teal-400 dark:hover:bg-teal-300 text-gray-900 rounded-lg transition-all duration-300"
                             >
                                 View My Work
-                            </motion.a>
-                            <motion.a
-                                {...fadeInUp}
+                            </a>
+                            <a
                                 href="#contact"
                                 className="px-6 py-3 text-lg font-semibold border border-teal-500 dark:border-teal-400 hover:bg-teal-500 text-teal-400 hover:text-white dark:hover:bg-teal-300 rounded-lg transition-all duration-300"
                             >
                                 Contact Me
-                            </motion.a>
+                            </a>
                         </div>
                     </div>
 
-                    <motion.div
-                        {...fadeInUp}
-                        className="relative mb-8 md:mb-0 mt-6 md:w-[40%] ml-auto"
-                    >
+                    <div className="relative mb-8 md:mb-0 mt-6 md:w-[40%] ml-auto">
                         <Image
                             src="/images/me.png"
                             alt="Mohamed Amine Lotfi"
@@ -112,10 +101,12 @@ const HeroSection = () => {
                             height={400}
                             className="rounded-full border-4 border-teal-400 dark:border-teal-400 hover:shadow-[0_0_20px_4px_#00b8b8] dark:hover:shadow-[0_0_20px_4px_#00b8b8] transition-all duration-300"
                         />
-                    </motion.div>
-                </motion.div>
+                    </div>
+
+                </div>
             </div>
-        </motion.section>
+        </section>
+    </ScrollReveal>
     );
 };
 

@@ -1,11 +1,11 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useTheme } from '../utils/ThemeContext'; 
+import { useTheme } from '../utils/ThemeContext';
 
 const ProjectSection = () => {
     const { isDarkMode } = useTheme(); // INFO: current theme (dark or light)
-     
+
     const projects = [
         {
             image: '/projects/blog.JPG',
@@ -54,16 +54,14 @@ const ProjectSection = () => {
 
     return (
         <section
-            className={`projects py-16 ${
-                isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'
-            }`}
+            className={`projects py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+                }`}
             id="projects"
         >
             <div className="container mx-auto text-center mb-12">
                 <h2
-                    className={`text-4xl font-bold ${
-                        isDarkMode ? 'text-teal-400' : 'text-teal-600'
-                    } mb-6`}
+                    className={`text-4xl font-bold ${isDarkMode ? 'text-teal-400' : 'text-teal-600'
+                        } mb-6`}
                 >
                     Projects
                 </h2>
@@ -86,15 +84,15 @@ const ProjectSection = () => {
                                 }}
                             >
                                 <div
-                                    className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl ${
-                                        isDarkMode
-                                            ? 'bg-gray-800 text-gray-200'
-                                            : 'bg-gray-200 text-gray-800'
-                                    }`}
+                                    className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl ${isDarkMode
+                                        ? 'bg-gray-800 text-gray-200'
+                                        : 'bg-gray-200 text-gray-800'
+                                        }`}
                                     style={{
                                         boxShadow: isDarkMode
-                                            ? '5px 5px 10px rgba(0, 0, 0, 0.8), 0 10px 20px rgba(0, 0, 0, 0.6)' // Shadow from left and bottom in dark mode
-                                            : '5px 5px 10px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)', // Shadow from left and bottom in light mode
+                                            ? '3px 3px 6px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.3)'  // Reduced shadow for dark mode
+                                            : '3px 3px 6px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.05)'  // Reduced shadow for light mode
+
                                     }}
                                 >
                                     <Image
@@ -105,20 +103,18 @@ const ProjectSection = () => {
                                         height={200}
                                     />
                                     <h3
-                                        className={`text-2xl font-semibold ${
-                                            isDarkMode
-                                                ? 'text-teal-400'
-                                                : 'text-teal-600'
-                                        } mb-4`}
+                                        className={`text-2xl font-semibold ${isDarkMode
+                                            ? 'text-teal-400'
+                                            : 'text-teal-600'
+                                            } mb-4`}
                                     >
                                         {project.title}
                                     </h3>
                                     <p
-                                        className={`${
-                                            isDarkMode
-                                                ? 'text-gray-400'
-                                                : 'text-gray-700'
-                                        } mb-6`}
+                                        className={`${isDarkMode
+                                            ? 'text-gray-400'
+                                            : 'text-gray-700'
+                                            } mb-6`}
                                     >
                                         {project.description}
                                     </p>
@@ -126,11 +122,10 @@ const ProjectSection = () => {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`inline-flex items-center ${
-                                            isDarkMode
-                                                ? 'text-teal-400 hover:text-teal-300'
-                                                : 'text-teal-500 hover:text-teal-300'
-                                        } text-lg font-medium transition duration-300`}
+                                        className={`inline-flex items-center ${isDarkMode
+                                            ? 'text-teal-400 hover:text-teal-300'
+                                            : 'text-teal-500 hover:text-teal-300'
+                                            } text-lg font-medium transition duration-300`}
                                     >
                                         <span>Visit Website</span>
                                         <svg
@@ -154,9 +149,8 @@ const ProjectSection = () => {
                     </div>
                 </div>
                 <p
-                    className={`absolute right-4 -bottom-10 flex items-center text-sm ${
-                        isDarkMode ? 'text-teal-400' : 'text-teal-600'
-                    }`}
+                    className={`absolute right-4 -bottom-10 flex items-center pt-0 text-sm ${isDarkMode ? 'text-teal-400' : 'text-teal-600'
+                        } animate-bounce`}
                 >
                     <span>Scroll to see more</span>
                     <svg
@@ -174,6 +168,7 @@ const ProjectSection = () => {
                         />
                     </svg>
                 </p>
+
             </div>
         </section>
     );

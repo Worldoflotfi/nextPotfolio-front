@@ -7,10 +7,6 @@ const HeroSection = () => {
 
      const [isDarkMode, setIsDarkMode] = useState(false);
 
-    // const toggleDarkMode = () => {
-    //     setIsDarkMode(!isDarkMode);
-    // };
-
     useEffect(() => {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
@@ -21,8 +17,8 @@ const HeroSection = () => {
                 document.documentElement.classList.remove('dark');
             }
         }, []);
-    
-        useEffect(() => {
+
+    useEffect(() => {
             if (isDarkMode) {
                 localStorage.setItem('theme', 'dark');
                 document.documentElement.classList.add('dark');
@@ -34,14 +30,12 @@ const HeroSection = () => {
             }
         }, [isDarkMode]);
 
-    return (//bg-gray-900 text-white
-        <section className=" dark:bg-gray-900 dark:text-white bg-white text-gray-900 transition-colors duration-300">
-            <div className="container mx-auto flex flex-col items-center justify-center px-5 py-16 text-center md:py-32 md:flex-row md:text-left">
+    return (
+        <section className="dark:bg-gray-900 dark:text-white bg-white text-gray-900 transition-colors duration-300">
+            <div className="container mx-auto flex flex-col items-center justify-center px-5 py-6 text-center md:py-20 md:flex-row md:text-left">
 
-                {/* Image and Heading Section */}
                 <div className="flex flex-col items-center md:items-start md:flex-row mt-4 md:gap-10">
 
-                    {/* Heading and Text */}
                     <div className="text-center mt-6 md:text-left md:w-[50%]">
                         <h1 className="text-4xl font-bold md:text-6xl font-Poppins">
                             <span className="text-gray-800 dark:text-white">Hi, I&apos;m</span>
@@ -54,7 +48,6 @@ const HeroSection = () => {
                             A passionate Full Stack Developer building modern web experiences.
                         </p>
 
-                        {/* Social Icons */}
                         <div className="mt-8 flex justify-center md:justify-start gap-6">
                             <a
                                 href="#"
@@ -82,7 +75,6 @@ const HeroSection = () => {
                             </a>
                         </div>
 
-                        {/* Buttons */}
                         <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
                             <a
                                 href="#projects"
@@ -99,7 +91,6 @@ const HeroSection = () => {
                         </div>
                     </div>
 
-                    {/* Image */}
                     <div className="relative mb-8 md:mb-0 mt-6 md:w-[40%] ml-auto">
                         <Image
                             src="/images/me.png"

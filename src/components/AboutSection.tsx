@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
 import TypingEffect from '../utils/TypingEffect';
-import ScrollRevealAlt from '@/utils/ScrollRevealAlt';
+import ScrollReveal from '@/utils/ScrollReveal';
 // import AnimateSection from '@/utils/AnimateSection';
 
 const AboutSection = () => {
 
     return (
-        <ScrollRevealAlt>
+        <ScrollReveal>
             <section
                 className="about bg-teal-500 text-gray-900 dark:bg-gray-900 dark:text-teal-400 py-16"
                 id="about"
@@ -138,7 +138,7 @@ const AboutSection = () => {
                     </div>
                 </div>
             </section>
-        </ScrollRevealAlt>
+        </ScrollReveal>
     );
 };
 

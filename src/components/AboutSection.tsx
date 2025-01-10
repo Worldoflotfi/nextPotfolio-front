@@ -7,14 +7,16 @@ import ScrollReveal from '@/utils/ScrollReveal';
 const AboutSection = () => {
 
     return (
-        <ScrollReveal>
+        
             <section
                 className="about bg-teal-500 text-gray-900 dark:bg-gray-900 dark:text-teal-400 py-16"
                 id="about"
             >
                 <div className="container mx-auto flex flex-col items-center text-center">
                     {/* Content Section */}
-                    <div className="about-content md:w-2/3">
+                    <ScrollReveal>
+                        <center>
+                            <div className="about-content md:w-2/3">
                         <h2 className="text-4xl font-bold mb-6">
                             About <span className="text-white dark:text-teal-400">Me</span>
                         </h2>
@@ -136,9 +138,12 @@ const AboutSection = () => {
                             </a>
                         </div>
                     </div>
+                        </center>
+                    
+                    </ScrollReveal>
                 </div>
             </section>
-        </ScrollReveal>
+        
     );
 };
 

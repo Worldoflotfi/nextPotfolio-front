@@ -7,11 +7,12 @@ const ServiceSection = () => {
     const { isDarkMode } = useTheme(); //TODO: Get the current theme (dark or light)
 
     return (
-        <ScrollReveal>
+        
         <section
             className={`services py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'}`}
             id="services"
         >
+            <ScrollReveal>
             <div className="container mx-auto text-center mb-12">
                 <h2 className={`text-4xl font-bold ${isDarkMode ? 'text-teal-400' : 'text-teal-600'} mb-6`}>
                     Services
@@ -81,8 +82,9 @@ const ServiceSection = () => {
                     </div>
                 ))}
             </div>
+            </ScrollReveal>
         </section>
-    </ScrollReveal>
+    
     );
 };
 

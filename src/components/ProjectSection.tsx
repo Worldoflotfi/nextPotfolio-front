@@ -54,126 +54,129 @@ const ProjectSection = () => {
     }, []);
 
     return (
-        <ScrollReveal>
+
         <section
             className={`projects py-16 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
                 }`}
             id="projects"
         >
-            <div className="container mx-auto text-center mb-12">
-                <h2
-                    className={`text-4xl font-bold ${isDarkMode ? 'text-teal-400' : 'text-teal-600'
-                        } mb-6`}
-                >
-                    Projects
-                </h2>
-            </div>
+            <ScrollReveal>
+                <div className="container mx-auto text-center mb-12">
 
-            <div className="relative">
-                <div className="overflow-x-scroll scrollbar-custom">
-                    <div
-                        className="flex space-x-4 mb-6"
-                        style={{
-                            minWidth: `${100 * (projects.length / slidesPerView)}%`,
-                        }}
+                    <h2
+                        className={`text-4xl font-bold ${isDarkMode ? 'text-teal-400' : 'text-teal-600'
+                            } mb-6`}
                     >
-                        {projects.map((project, index) => (
-                            <div
-                                key={index}
-                                className="min-w-[300px]"
-                                style={{
-                                    width: `calc(100% / ${slidesPerView})`,
-                                }}
-                            >
-                                <div
-                                    className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl ${isDarkMode
-                                        ? 'bg-gray-800 text-gray-200'
-                                        : 'bg-gray-200 text-gray-800'
-                                        }`}
-                                    style={{
-                                        boxShadow: isDarkMode
-                                            ? '3px 3px 6px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.3)'  // Reduced shadow for dark mode
-                                            : '3px 3px 6px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.05)'  // Reduced shadow for light mode
+                        Projects
+                    </h2>
+                </div>
 
+                <div className="relative">
+                    <div className="overflow-x-scroll scrollbar-custom">
+                        <div
+                            className="flex space-x-4 mb-6"
+                            style={{
+                                minWidth: `${100 * (projects.length / slidesPerView)}%`,
+                            }}
+                        >
+                            {projects.map((project, index) => (
+                                <div
+                                    key={index}
+                                    className="min-w-[300px]"
+                                    style={{
+                                        width: `calc(100% / ${slidesPerView})`,
                                     }}
                                 >
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-64 object-cover rounded-lg mb-4"
-                                        width={500}
-                                        height={200}
-                                    />
-                                    <h3
-                                        className={`text-2xl font-semibold ${isDarkMode
-                                            ? 'text-teal-400'
-                                            : 'text-teal-600'
-                                            } mb-4`}
-                                    >
-                                        {project.title}
-                                    </h3>
-                                    <p
-                                        className={`${isDarkMode
-                                            ? 'text-gray-400'
-                                            : 'text-gray-700'
-                                            } mb-6`}
-                                    >
-                                        {project.description}
-                                    </p>
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`inline-flex items-center ${isDarkMode
-                                            ? 'text-teal-400 hover:text-teal-300'
-                                            : 'text-teal-500 hover:text-teal-300'
-                                            } text-lg font-medium transition duration-300`}
-                                    >
-                                        <span>Visit Website</span>
-                                        <svg
-                                            className="w-5 h-5 ml-2"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M5 12h14M12 5l7 7-7 7"
-                                            />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <p
-                    className={`absolute right-4 -bottom-10 flex items-center pt-0 text-sm ${isDarkMode ? 'text-teal-400' : 'text-teal-600'
-                        } animate-bounce`}
-                >
-                    <span>Scroll to see more</span>
-                    <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M9 5l7 7-7 7"
-                        />
-                    </svg>
-                </p>
+                                    <div
+                                        className={`project-card p-6 rounded-lg shadow-lg hover:shadow-xl ${isDarkMode
+                                            ? 'bg-gray-800 text-gray-200'
+                                            : 'bg-gray-200 text-gray-800'
+                                            }`}
+                                        style={{
+                                            boxShadow: isDarkMode
+                                                ? '3px 3px 6px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.3)'  // Reduced shadow for dark mode
+                                                : '3px 3px 6px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.05)'  // Reduced shadow for light mode
 
-            </div>
+                                        }}
+                                    >
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="w-full h-64 object-cover rounded-lg mb-4"
+                                            width={500}
+                                            height={200}
+                                        />
+                                        <h3
+                                            className={`text-2xl font-semibold ${isDarkMode
+                                                ? 'text-teal-400'
+                                                : 'text-teal-600'
+                                                } mb-4`}
+                                        >
+                                            {project.title}
+                                        </h3>
+                                        <p
+                                            className={`${isDarkMode
+                                                ? 'text-gray-400'
+                                                : 'text-gray-700'
+                                                } mb-6`}
+                                        >
+                                            {project.description}
+                                        </p>
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`inline-flex items-center ${isDarkMode
+                                                ? 'text-teal-400 hover:text-teal-300'
+                                                : 'text-teal-500 hover:text-teal-300'
+                                                } text-lg font-medium transition duration-300`}
+                                        >
+                                            <span>Visit Website</span>
+                                            <svg
+                                                className="w-5 h-5 ml-2"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth="2"
+                                                    d="M5 12h14M12 5l7 7-7 7"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <p
+                        className={`absolute right-4 -bottom-10 flex items-center pt-0 text-sm ${isDarkMode ? 'text-teal-400' : 'text-teal-600'
+                            } animate-bounce`}
+                    >
+                        <span>Scroll to see more</span>
+                        <svg
+                            className="w-4 h-4 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M9 5l7 7-7 7"
+                            />
+                        </svg>
+                    </p>
+
+                </div>
+            </ScrollReveal>
         </section>
-    </ScrollReveal>
+
     );
 };
 

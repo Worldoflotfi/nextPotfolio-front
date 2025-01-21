@@ -16,6 +16,7 @@ const ContactSection = () => {
         };
 
         try {
+            //messages go to mail 
             const response = await fetch('http://localhost:8080/api/contact/send', {
                 method: 'POST',
                 headers: {

@@ -43,9 +43,8 @@ const NavBar = () => {
   return (
     <div>
       <nav
-        className={`fixed w-full top-0 z-50 shadow-lg transition-transform ease-in-out duration-300 transform ${
-          isNavVisible ? 'translate-y-0' : '-translate-y-full'
-        } ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'}`}
+        className={`fixed w-full top-0 z-50 shadow-lg transition-transform ease-in-out duration-300 transform ${isNavVisible ? 'translate-y-0' : '-translate-y-full'
+          } ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'}`}
       >
         <div className="container mx-auto flex items-center justify-between px-6 py-4">
           {/* Branding */}
@@ -124,9 +123,8 @@ const NavBar = () => {
 
       {/* Arrow for Navbar */}
       <div
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer transition-all ${
-          isNavVisible ? 'opacity-0 pointer-events-none' : 'opacity-100'
-        }`}
+        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer transition-all ${isNavVisible ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          }`}
         onMouseEnter={() => setIsNavVisible(true)}
       >
         <i className="bx bxs-chevrons-down text-4xl text-teal-500 hover:text-teal-700 transition-transform duration-300"></i>

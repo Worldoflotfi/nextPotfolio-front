@@ -18,7 +18,7 @@ const ProjectSection = () => {
             image: '/projects/hidaya.JPG',
             title: 'Hidaya Store',
             description: 'An online marketplace for Islamic products built with the MERN stack.',
-            link: 'https://example.com',
+            link: 'https://github.com/Worldoflotfi/Hidaya-frontend.git',
         },
         {
             image: '/projects/real estate.JPG',

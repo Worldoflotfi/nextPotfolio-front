@@ -99,7 +99,7 @@ const HeroSection = () => {
                             alt="Mohamed Amine Lotfi"
                             width={400}
                             height={400}
-                            className="rounded-full border-4 border-teal-400 dark:border-teal-400 hover:shadow-[0_0_20px_4px_#00b8b8] dark:hover:shadow-[0_0_20px_4px_#00b8b8] transition-all duration-300"
+                            className="rounded-full border-4 border-teal-400 dark:border-teal-400 hover:shadow-[0_0_20px_4px_#00b8b8] dark:hover:shadow-[0_0_20px_4px_#3c3c3c] transition-all duration-300"
                         />
                     </div>
 

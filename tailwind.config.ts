@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 export default {
   content: [
@@ -11,6 +12,22 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        gray: {
+          ...colors.gray,
+          600: "var(--color-gray-600)",
+          700: "var(--color-gray-700)",
+          800: "var(--color-gray-800)",
+          900: "var(--color-gray-900)",
+        },
+        teal: {
+          ...colors.teal,
+          200: "var(--color-teal-200)",
+          300: "var(--color-teal-300)",
+          400: "var(--color-teal-400)",
+          500: "var(--color-teal-500)",
+          600: "var(--color-teal-600)",
+          700: "var(--color-teal-700)",
+        },
       },
       fontFamily:{
         Poppins: ['var(--font-Poppins)'],
